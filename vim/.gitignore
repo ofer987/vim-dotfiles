@@ -1,0 +1,11 @@
+tags
+*~
+*.swp
+.VimballRecord
+view
+
+omnisharp-roslyn/**/*
+
+autoload
+
+spell/*.spl
