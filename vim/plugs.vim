@@ -51,14 +51,6 @@ Plug 'wellle/targets.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'junegunn/vim-easy-align'
 
-" Conquer of Completion (CoC)
-" Install TypeScript
-" npm install -g typescript typescript-language-server
-" And then run :CocInstall coc-tsserver in Neovim
-" And then run :CocInstall coc-css in Neovim
-" And then run :CocInstall coc-json in Neovim
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'

@@ -1,6 +1,6 @@
 # Vim .files
 
-## Install
+## Installation
 
 ### Vim
 
@@ -28,10 +28,3 @@ Install **node.js** and **npm** from  https://nodejs.org/en/download/
 1. `npm install -g bash-language-server`
 1. `npm install -g vscode-css-languageserver-bin`
 1. `npm install -g vscode-html-languageserver-bin`
-
-#### Bind to Coc
-
-Load **Vim** and execute,
-  - `:CocInstall coc-tsserver`
-  - `:CocInstall coc-css`
-  - `:CocInstall coc-json`

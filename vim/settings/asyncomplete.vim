@@ -23,23 +23,23 @@ function! s:on_lsp_buffer_enabled() abort
   autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
 endfunction
 
-" Python
-if executable('pyls')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'allowlist': ['python'],
-        \ })
+" JavaScript
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+      \ 'name': 'javascript support using typescript-language-server',
+      \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+      \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
+      \ 'whitelist': ['javascript', 'javascript.jsx', 'javascriptreact']
+      \ })
 endif
 
-" Ruby
-if executable('solargraph')
-  " gem install solargraph
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'solargraph',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
-        \ 'initialization_options': {"diagnostics": "true"},
-        \ 'whitelist': ['ruby'],
+" TypeScript
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'typescript-language-server',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+        \ 'whitelist': ['typescript', 'typescript.tsx', 'typescriptreact'],
         \ })
 endif
 
@@ -91,21 +91,21 @@ if executable('html-languageserver')
         \ })
 endif
 
+" CSS / LESS / SASS / SCSS
+if executable('css-languageserver')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'css-languageserver',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-languageserver --stdio']},
+        \ 'whitelist': ['css', 'less', 'sass'],
+        \ })
+endif
+
 " C/C++
 if executable('clangd')
   au User lsp_setup call lsp#register_server({
         \ 'name': 'clangd',
         \ 'cmd': {server_info->['clangd', '-background-index']},
         \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-        \ })
-endif
-
-" Docker
-if executable('docker-langserver')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'docker-langserver',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
-        \ 'whitelist': ['dockerfile'],
         \ })
 endif
 
