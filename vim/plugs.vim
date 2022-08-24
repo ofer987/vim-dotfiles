@@ -15,21 +15,9 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ap/vim-css-color'
 Plug 'chr4/nginx.vim'
-" Run these commands as well
-" npm install -g vim-language-server
-" npm install -g bash-language-server
-" npm install -g vscode-css-languageserver-bin
-" npm install -g vscode-html-languageserver-bin
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/vim-lsp'
 " Use ALE to show Lsp errors/diagnostics/errors
 " In other words, Lsp errors/diagnostics/errors do not show using Lsp
 Plug 'dense-analysis/ale'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'andreypopp/asyncomplete-ale.vim'
-Plug 'rhysd/vim-lsp-ale'
-Plug 'prabirshrestha/asyncomplete-emmet.vim'
 Plug 'mattn/emmet-vim'
 Plug 'ofer987/vim-caser'
 Plug 'ofer987/vim-rooter'
@@ -56,6 +44,22 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'jparise/vim-graphql'
+
+" Conquer of Completion (CoC) for Language Server Protocol (LSP)
+" To install TypeScript LSP,
+"   Run :CocInstall coc-tsserver
+" To install HTML/CSS/SASS/Less LSP,
+"   Run :CocInstall coc-css
+" To install clangd for C/C++/Objective-C LSP,
+"   1. Navigate to https://clangd.llvm.org/installation.html
+"   2. Run :CocInstall coc-clangd
+" To install JSON LSP,
+"   Run :CocInstall coc-json
+" To install Bash LSP,
+"   Run :CocInstall coc-sh
+" To install Python 3 LSP,
+"   Run :CocInstall coc-pyright
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " HTML
 Plug 'AndrewRadev/tagalong.vim'
@@ -91,6 +95,5 @@ Plug 'piec/vim-lsp-clangd'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 
 call plug#end()

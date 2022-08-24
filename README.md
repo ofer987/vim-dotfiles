@@ -15,16 +15,29 @@ Then run, `vim +PlugInstall +PlugUpdate +PlugClean`
 
 ### Language Server Support
 
-For analysis of languages such as JavaScript, TypeScript, Bash, and HTML and CSS,
+Supports analysis of,
+
+1. C/C++/Objective-C
+1. HTML/CSS/SASS/SCSS/Less
+1. TypeScript/JavaScript
+1. React
+1. Python 3
+1. Bash
 
 #### Install node.js and npm
 
-Install **node.js** and **npm** from  https://nodejs.org/en/download/
+Install **node.js** and **npm** from https://nodejs.org/en/download/
 
-#### Install the language servers,
+#### For C/C++/Objective-C
 
-1. `npm install -g typescript typescript-language-server`
-1. `npm install -g vim-language-server`
-1. `npm install -g bash-language-server`
-1. `npm install -g vscode-css-languageserver-bin`
-1. `npm install -g vscode-html-languageserver-bin`
+1. Navigate to https://clangd.llvm.org/installation.html
+1. Run `:CocInstall coc-clangd` in Vim
+
+#### For the other language servers
+
+In Vim run,
+
+1. `:CocInstall coc-css` for HTML/CSS/SASS/SCSS/Less
+1. `:CocInstall coc-tsserver` for TypeScript/JavaScript and React
+1. `:CocInstall coc-pyright` for Python 3
+1. `:CocInstall coc-sh` for Bash
