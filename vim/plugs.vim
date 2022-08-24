@@ -67,14 +67,6 @@ Plug 'AndrewRadev/tagalong.vim'
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-" Ruby
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-bundler'
-Plug 'vim-scripts/matchit.zip'
-Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock'
-
 " Fish
 Plug 'ofer987/vim-fish'
 
