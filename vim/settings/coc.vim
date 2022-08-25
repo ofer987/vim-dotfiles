@@ -26,7 +26,11 @@ map <silent> <leader>fu <Plug>(coc-references)
 map <silent> <leader>nm <Plug>(coc-rename)
 map <silent> <C-n> <Plug>(coc-diagnostic-next)
 map <silent> <C-p> <Plug>(coc-diagnostic-prev)
+
 map <silent> <leader>fl :CocList outline<cr>
-map <silent> <leader>sp :CocRestart<cr> | let g:asyncomplete_auto_popup = 0
+map <silent> <leader>sp :CocRestart<cr>
+
+map <silent> <leader>qo :CocListResume<cr>
+map <silent> <leader>qc :CocListCancel<cr>
 map <silent> <leader>qp :CocPrev<cr>
 map <silent> <leader>qn :CocNext<cr>
